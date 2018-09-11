@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/lucasfloro/js-tdd-course/issues"
   },
-  "homepage": "https://github.com/lucasfloro/js-tdd-course#readme"
+  "homepage": "https://github.com/lucasfloro/js-tdd-course#readme",
+  "dependencies": {}
 }

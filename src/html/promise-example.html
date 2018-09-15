@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>02 - Promises Example</title>
+</head>
+<body>
+
+</body>
+<script>
+              // fetch é o mesmo que o $.ajax
+  let posts = fetch('https://willianjusten.com.br/search.json');
+  // setTimeout(() => {
+  //   console.log(posts);
+  // }, 3000);
+
+  // 3 status importante das promises
+  // pending: ainda está realizando a chamada, ainda não finalizou
+  // resolved: quando já resolveu e já retornou os dados
+  // reject: quando ocorreu algum problema e não resolveu a promise
+
+  posts
+        .then(data => data.json())
+        .then(data => data.map(post => {
+          console.log(post.title)
+        }))
+        // exemplo de erro apenas para o catch funcionar.
+        // .then(data => {
+        //   throw new Error('ixi deu erro')
+        // })
+        .catch(err => console.log(err));
+</script>
+</html>

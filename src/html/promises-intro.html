@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>01 - Promises Intro</title>
+</head>
+<body>
+  <!-- Promise um obj com uma ação ainda não finalizada,
+        como uma promessa mesmo, ainda não fiz, mas vou fazer.
+        Bastante interessante para funções assíncronas e evitar
+        o callback hell =/ -->
+</body>
+
+  <script>
+    let defer = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (true) {
+          resolve('Hello! It works');
+        } else {
+          reject('Error');
+        }
+        }, 2000);
+      });
+    // Quando finalizar, faça alguma coisa
+    // pode fazer esse chaining...isso quer dizer que existem dois 'then' encadeados
+    defer
+        .then((data) => {
+          console.log(data); // Aqui recebe 'Hello! It works'
+          return 'foo'; // e retorna 'foo' para o próximo then
+        })
+        .then((data) => console.log(data))
+        .catch((err) => console.log(err))
+  </script>
+</html>

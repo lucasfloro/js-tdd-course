@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>02 - Classes Intro</title>
+</head>
+<body>
+</body>
+<script>
+  class Animal {
+    constructor(kind, sound) {
+      this.kind = kind;
+      this.sound = sound;
+    }
+
+    // escrita com shorthand
+    // não necessitando utilizar hello: function () {}
+    hello() {
+      console.log(`${this.sound} I'm a ${this.kind}`);
+    }
+
+    // método estático, não passa para objetos filhos
+    static info() {
+      console.log('This is a class to create animals');
+    }
+
+    // Getter (Orientação a objeto)
+    get name() {
+      console.log(`${this.sound} My name is Jack`);
+    }
+
+    // Setter (Orientação a objeto)
+    set nickname(nick) {
+      this.nick = nick;
+    }
+  }
+
+  const dog = new Animal('dog', 'auauau');
+  const cat = new Animal('cat', 'meow');
+
+  // ao setar o nickname no objeto dog
+  // ele passa a ter uma propriedade a mais
+  // nick = 'J', conforme exemplo na aula.
+</script>
+</html>

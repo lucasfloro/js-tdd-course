@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>02 - for...of</title>
+</head>
+<body>
+</body>
+<script>
+  // iterators
+  // elementos que possibilitam iterar(passar de um elem para outro) um iteratable
+  // iterable
+  // elementos que podem ser iterados, ex.: [1,2,3,4] pode-se passar por cada elemento
+
+  let txt = 'Ireland'; //iterable
+  let it = txt[Symbol.iterator](); //iterator
+
+  // iterando um de cada vez com next()
+  // console.log(it.next());
+  // console.log(it.next());
+  // console.log(it.next());
+  // console.log(it.next());
+  // console.log(it.next());
+  // console.log(it.next());
+  // console.log(it.next());
+  // console.log(it.next());
+
+  // iterando com o for...of
+  for (letter of txt) {
+    console.log(letter);
+    // pode-se quebrar o laço em determinada condição
+    if (letter === 'a') break;
+  }
+</script>
+</html>

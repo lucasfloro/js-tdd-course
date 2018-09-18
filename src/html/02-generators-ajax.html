@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>02 - Generators Flux Ajax</title>
+</head>
+<body>
+</body>
+<script>
+  function ajax(url) {
+    fetch(url)
+        .then(data => data.json())
+        .then(data => console.log(data));
+  }
+
+  // https://willianjusten.com.br/search.json
+  // https://api.github.com/users/willianjusten
+
+  function ajaxGen() {
+    console.log('Buscando posts...');
+    ajax('https://willianjusten.com.br/search.json');
+
+    console.log('Buscando dados github...');
+    ajax('https://api.github.com/users/willianjusten');
+  }
+
+  ajaxGen();
+</script>
+</html>
